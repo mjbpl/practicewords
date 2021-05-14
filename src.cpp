@@ -71,7 +71,7 @@ int main() {
 
   long long int score = 0LL;
   long long int comscore = 0LL;
-
+  char choice;
   string s;
   int rank = 50000;
 
@@ -139,6 +139,24 @@ int main() {
     score += (int)ss.length();
 	lc = ss[ss.size() - 1];
 	cout << "Score is: you " << score << ", me " << comscore << "\n\n";
+    
+    cout<<"Wanna Quit press(y) for quit\n";
+    cin>>choice;
+	
+    if(choice=='y'||choice=='Y'){
+	if(score>comscore){
+		cout<<"*** Congratulations. You won As you have more points ***\n\n";
+		break; 
+    	}
+    	else if(score<comscore){
+    		cout<<"You lost!, You have lesser points than computer \n\n";
+    		break;
+	}
+	else{
+		cout<<"Scores are level, Match Draw\n\n";
+		break;
+	}
+     }
 
     w = fetch_word(lc);
     string w = fetch_word(lc);
